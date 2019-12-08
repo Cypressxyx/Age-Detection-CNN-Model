@@ -12,10 +12,14 @@ def load_base_model(img_size):
 def create_model(img_size):
     dropout_rate = 0.5
     base_model   = load_base_model(img_size)  
+    base_model_output_shape = base_model.output_shape[1]
+
+    # Define the transfer learning layers
     model = Sequential(name="Gender Classification model")
-    model.add(Dense(base_model[-1].shape(), output_shape=base_model[-1].shape() // 2))
+    model.add(Dense(base_model_output_shape, output_shape=base_model_output_shape // 2))
     model.add(Dropout(dropout_rate))
-    model.add(Dense(base_model[-1].shape // 2, output_shape=base_model.shape() // 2))
+    model.add(Dense(base_model_output_shape // 2, output_shape=base_model_output_shape // 4))
     model.add(Dropout(dropout_rate))
     model = model.compile()
+
     return model
