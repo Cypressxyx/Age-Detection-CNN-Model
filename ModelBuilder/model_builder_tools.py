@@ -13,7 +13,6 @@ def create_model(img_size):
     dropout_rate = 0.5
     base_model   = load_base_model(img_size)  
     model = Sequential(name="Gender Classification model")
-    model = Model() 
     model.add(Dense(base_model[-1].shape(), output_shape=base_model[-1].shape() // 2))
     model.add(Dropout(dropout_rate))
     model.add(Dense(base_model[-1].shape // 2, output_shape=base_model.shape() // 2))
