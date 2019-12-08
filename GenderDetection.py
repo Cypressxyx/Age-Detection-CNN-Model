@@ -7,5 +7,5 @@ Dataset info:
     - Can be loaded into google collab using 
         !wget --no-check-certificate https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/static/imdb_crop.tar -O /tmp/faces.zip
 """ 
-from ModelBuilder import GenderDetectioModel
+from ModelBuilder import GenderDetectionModel
 gender_model = GenderDetectionModel()
