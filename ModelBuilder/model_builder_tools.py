@@ -25,5 +25,6 @@ def create_model(img_size):
     model     = model.compile(optimizer=optimizer, loss='categorical_crossentropy', metrics=['accuracy'])
     return model
 
+"Return the ADAM optimizer"
 def get_optimizer(learning_rate):
     return keras.optimizers.Adam(lr=learning_rate)
