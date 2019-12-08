@@ -13,12 +13,17 @@ def create_model(img_size):
     dropout_rate = 0.5
     base_model   = load_base_model(img_size)  
     base_model_output_shape = base_model.output_shape[-1]
+
     # Define the transfer learning layers
     model = Sequential(name="Gender Classification model")
-    model.add(Dense(base_model_output_shape // 2, input_shape=base_model.output_shape[1]))
+    model.add(Dense(base_model_output_shape // 2, input_shape=base_model.output_shape[1:]))
     model.add(Dropout(dropout_rate))
     model.add(Dense(base_model_output_shape // 4))
     model.add(Dropout(dropout_rate))
-    model = model.compile()
 
+    optimizer = get_optimizer(.0001)
+    model     = model.compile(optimizer=optimizer, loss='categorical_crossentropy', metrics=['accuracy'])
     return model
+
+def get_optimizer(learning_rate):
+    return keras.optimizers.Adam(lr=learning_rate)
