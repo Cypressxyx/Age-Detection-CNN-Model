@@ -7,7 +7,7 @@
 """ 
 from DataLoader.DataLoader import Dataset
 from Evaluator.Evaluator import Evaluator
-from ModelBuilder.ModelBuilder import GenderDetectionModel
+from ModelBuilder.ModelBuilder import AgeDetectionModel
 
 
 """  Collect the data to train and test """

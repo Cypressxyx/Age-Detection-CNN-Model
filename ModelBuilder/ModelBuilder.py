@@ -4,7 +4,7 @@ A Class definition for the Gender model
 
 from ModelBuilder.model_builder_tools import create_model
 
-class GenderDetectionModel:
+class AgeDetectionModel:
     def __init__(self):
         self.model = create_model(255)
         self.batch_size = 32
