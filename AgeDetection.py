@@ -1,9 +1,7 @@
 """
 @description: A CNN Model that can detect Gender
 @Dataset:
-    - Dataset can be found at https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/static/imdb_crop.tar
-    - Can be loaded into google collab using 
-        !wget --no-check-certificate https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/static/imdb_crop.tar -O /tmp/faces.zip
+    Can be found at https://github.com/JingchunCheng/All-Age-Faces-Dataset
 """ 
 from DataLoader.DataLoader import Dataset
 from Evaluator.Evaluator import Evaluator
