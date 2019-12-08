@@ -1,5 +1,5 @@
 import keras
-from keras.models import Model
+from keras.models import Sequential
 from keras.layers import Dense, Dropout
 
 "Load the Inception Base Model from the Keras Library"
@@ -12,6 +12,7 @@ def load_base_model(img_size):
 def create_model(img_size):
     dropout_rate = 0.5
     base_model   = load_base_model(img_size)  
+    model = Sequential(name="Gender Classification model")
     model = Model() 
     model.add(Dense(base_model[-1].shape(), output_shape=base_model[-1].shape() // 2))
     model.add(Dropout(dropout_rate))
